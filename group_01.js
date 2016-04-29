@@ -1,13 +1,20 @@
-var atticus = ["Atticus", "2405", "47000", 3];
-var jem = ["Jem", "62347", "63500", 4];
-var boo = ["Boo", "11435", "54000", 3];
-var scout = ["Scout", "6243", "74750", 5];
+function Person(name, number, salary, rating) {
+    this.employeeName = name;
+    this.employeeNumber = number;
+    this.salary = salary;
+    this.rating = rating;
+}
+var atticus = new Person("Atticus", "2405", "47000", 3);
+var jem = new Person("Jem", "62347", "63500", 4);
+var boo = new Person("Boo", "11435", "54000", 3);
+var scout = new Person("Scout", "6243", "74750", 5);
+
+
 
 var employees = [atticus, jem, boo, scout];
 
 
-//create a FUNCTION that takes in one employee array and returns another array
-//newArray = [Name, STI percent, adjusted salary, bonus amount]
+
 function bonus(employee) {
   var bonusPercent = 0;
 
@@ -37,8 +44,8 @@ if (bonusPercent > 13) {
   bonusPercent = 13;
 }
 newArray[1] = bonusPercent;
-newArray[2] = (Math.round(employee[2] * (bonusPercent / 100) + 1);
-newArray[3] = (Math.round(employee[2] * (bonusPercent / 100)));
+newArray[2] = (Math.round(employee[2] * (bonusPercent / 100) + 1)
+newArray[3] = (Math.round(employee[2] * (bonusPercent / 100)))
 return newArray;
 }
 
