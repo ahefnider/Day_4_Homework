@@ -34,7 +34,7 @@ switch(employee.rating) {
 };
 var newArray = [];
 newArray[0] = employee.employeeName;
-if (employee.employeeNumber.length > 4) {
+if (employee.employeeNumber.length <= 4) {
   bonusPercent += 5;
 }
 if (employee.salary > 65000) {
@@ -43,11 +43,12 @@ if (employee.salary > 65000) {
 if (bonusPercent > 13) {
   bonusPercent = 13;
 }
+
 empSalary = parseInt(employee.salary);
 
 newArray[1] = bonusPercent;
-newArray[2] = Math.round(employee.salary * (bonusPercent / 100) + empSalary);
-newArray[3] = Math.round(employee.salary * (bonusPercent / 100));
+newArray[2] = Math.round(empSalary * (bonusPercent / 100) + empSalary);
+newArray[3] = Math.round(empSalary * (bonusPercent / 100));
 return newArray;
 }
 
