@@ -19,7 +19,7 @@ function bonus(employee) {
   var bonusPercent = 0;
 
 
-switch(employee[3]) {
+switch(employee.rating) {
   case 3:
   bonusPercent = 4
   break;
@@ -33,27 +33,24 @@ switch(employee[3]) {
   bonusPercent = 0
 };
 var newArray = [];
-newArray[0] = employee[0]
-if (employee[1].length > 4) {
+newArray[0] = employee.employeeName;
+if (employee.employeeNumber.length > 4) {
   bonusPercent += 5;
-};
-if (employee[2] > 65000) {
+}
+if (employee.salary > 65000) {
   bonusPercent--;
 }
 if (bonusPercent > 13) {
   bonusPercent = 13;
 }
 newArray[1] = bonusPercent;
-newArray[2] = (Math.round(employee[2] * (bonusPercent / 100) + 1)
-newArray[3] = (Math.round(employee[2] * (bonusPercent / 100)))
+newArray[2] = Math.round(employee.salary * (bonusPercent / 100) + 1);
+newArray[3] = Math.round(employee.salary * (bonusPercent / 100));
 return newArray;
 }
 
-
-
-
-
-
-
+var outArray = [];
+for (var i=0; i < employees.length; i++){
+  outArray = bonus(employees[i]);
+  console.log(outArray);
 }
-console.log(newArray)
