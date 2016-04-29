@@ -43,8 +43,10 @@ if (employee.salary > 65000) {
 if (bonusPercent > 13) {
   bonusPercent = 13;
 }
+empSalary = parseInt(employee.salary);
+
 newArray[1] = bonusPercent;
-newArray[2] = Math.round(employee.salary * (bonusPercent / 100) + 1);
+newArray[2] = Math.round(employee.salary * (bonusPercent / 100) + empSalary);
 newArray[3] = Math.round(employee.salary * (bonusPercent / 100));
 return newArray;
 }
